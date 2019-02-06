@@ -1,0 +1,6 @@
+[model]
+path = /home/gnpillai/Hrituraj/Pixel-CNN/Data
+
+[images]
+no_images = 10
+images_size = 28
