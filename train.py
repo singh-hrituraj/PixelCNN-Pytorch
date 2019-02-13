@@ -20,15 +20,15 @@ def main(config_file):
 	data_ = config['data']
 	network = config['network']
 
-	path = data_.get('path', '/home/gnpillai/Hrituraj/Pixel-CNN/Data')
-	data_name = data_.get('data_name','MNIST')
+	path = data_.get('path', 'Data') #Path where the data after loading is to be saved
+	data_name = data_.get('data_name','MNIST') #What data type is to be loaded ex - MNIST, CIFAR
 	batch_size = data_.get('batch_size', 144)
 
-	layers = network.get('no_layers', 8)
-	kernel = network.get('kernel', 7)
-	channels = network.get('channels', 64)
-	epochs = network.get('epochs', 25)
-	save_path = network.get('save_path', '/home/gnpillai/Hrituraj/Pixel-CNN/Models')
+	layers = network.get('no_layers', 8) #Number of layers in the network
+	kernel = network.get('kernel', 7) #Kernel size
+	channels = network.get('channels', 64) #Depth of the intermediate layers
+	epochs = network.get('epochs', 25) #No of epochs
+	save_path = network.get('save_path', 'Models') #path where the models are to be saved
 
 
 	#Loading Data
@@ -50,7 +50,7 @@ def main(config_file):
 	#Defining the model and training it on loss function
 	device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 	net = PixelCNN().to(device)
-	if torch.cuda.device_count() > 1:
+	if torch.cuda.device_count() > 1: # If more than one GPU available, accelerate the training using multiple GPUs
   		print("Let's use", torch.cuda.device_count(), "GPUs!")
   		net = nn.DataParallel(net)
 	

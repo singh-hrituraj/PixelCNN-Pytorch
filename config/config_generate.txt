@@ -1,5 +1,7 @@
 [model]
 path = /home/gnpillai/Hrituraj/Pixel-CNN/Data/
+load_path = /home/gnpillai/Hrituraj/Pixel-CNN/Models/Model_Checkpoint_Last.pt
+
 
 [images]
 no_images = 144

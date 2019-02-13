@@ -18,8 +18,8 @@ def main(config_file):
 	model = config['model']
 	images = config['images']
 
-	save_path = model.get('save_path', '/home/gnpillai/Hrituraj/Pixel-CNN/Models/')
-	assert(os.path.exists(save_path+'Model_Checkpoint_Last.pt'), 'Saved Model File Does not exist!')
+	load_path = model.get('save_path', 'Models/Model_Checkpoint_Last.pt')
+	assert(os.path.exists(load_path), 'Saved Model File Does not exist!')
 	no_images = images.get('no_images', 144)
 	images_size = images.get('images_size', 28)
 	images_channels = images.get('images_channels', 1)
@@ -28,10 +28,10 @@ def main(config_file):
 	#Define and load model
 	device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 	net = PixelCNN().to(device)
-	if torch.cuda.device_count() > 1:
+	if torch.cuda.device_count() > 1: #Accelerate testing if multiple GPUs available
   		print("Let's use", torch.cuda.device_count(), "GPUs!")
   		net = nn.DataParallel(net)
-	net.load_state_dict(torch.load(save_path +'Model_Checkpoint_Last.pt' ))
+	net.load_state_dict(torch.load(save_path))
 	net.eval()
 
 
