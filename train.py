@@ -22,7 +22,7 @@ def main(config_file):
 
 	path = data_.get('path', '/home/gnpillai/Hrituraj/Pixel-CNN/Data')
 	data_name = data_.get('data_name','MNIST')
-	batch_size = data_.get('batch_size', 20)
+	batch_size = data_.get('batch_size', 144)
 
 	layers = network.get('no_layers', 8)
 	kernel = network.get('kernel', 7)
@@ -93,7 +93,7 @@ def main(config_file):
 			loss_+=loss
 			step+=1
 
-			if(step%300 == 0):
+			if(step%100 == 0):
 				print('Epoch:'+str(i)+'\t'+ str(step) +'\t Iterations Complete \t'+'loss: ', loss.item()/1000.0)
 				loss_overall.append(loss_/1000.0)
 				loss_=0
@@ -103,7 +103,10 @@ def main(config_file):
 		if not os.path.exists(save_path):
 			os.makedirs(save_path)
 		print("Saving Checkpoint!")
-		torch.save(model.state_dict(), save_path+'/Model_Checkpoint_'+str(i)+'.pt')
+		if(i==epochs-1):
+			torch.save(net.state_dict(), save_path+'/Model_Checkpoint_'+'Last'+'.pt')
+		else:
+			torch.save(net.state_dict(), save_path+'/Model_Checkpoint_'+str(i)+'.pt')
 		print('Checkpoint Saved')
 
 

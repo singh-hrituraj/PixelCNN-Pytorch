@@ -23,31 +23,31 @@ class PixelCNN(nn.Module):
 		self.BatchNorm2d_1 = nn.BatchNorm2d(channels)
 		self.ReLU_1= nn.ReLU(True)
 
-		self.Conv2d_2 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_2 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_2 = nn.BatchNorm2d(channels)
 		self.ReLU_2= nn.ReLU(True)
 
-		self.Conv2d_3 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_3 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_3 = nn.BatchNorm2d(channels)
 		self.ReLU_3= nn.ReLU(True)
 
-		self.Conv2d_4 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_4 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_4 = nn.BatchNorm2d(channels)
 		self.ReLU_4= nn.ReLU(True)
 
-		self.Conv2d_5 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_5 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_5 = nn.BatchNorm2d(channels)
 		self.ReLU_5= nn.ReLU(True)
 
-		self.Conv2d_6 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_6 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_6 = nn.BatchNorm2d(channels)
 		self.ReLU_6= nn.ReLU(True)
 
-		self.Conv2d_7 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_7 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_7 = nn.BatchNorm2d(channels)
 		self.ReLU_7= nn.ReLU(True)
 
-		self.Conv2d_8 = MaskedCNN('A',channels,channels, kernel, 1, kernel//2, bias=False)
+		self.Conv2d_8 = MaskedCNN('B',channels,channels, kernel, 1, kernel//2, bias=False)
 		self.BatchNorm2d_8 = nn.BatchNorm2d(channels)
 		self.ReLU_8= nn.ReLU(True)
 

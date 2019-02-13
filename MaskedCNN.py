@@ -21,11 +21,11 @@ class MaskedCNN(nn.Conv2d):
 		_, depth, height, width = self.weight.size()
 		self.mask.fill_(1)
 		if mask_type =='A':
-			self.mask[:,:,height//2-1,width//2-1:] = 0
-			self.mask[:,:,height//2:,:] = 0
+			self.mask[:,:,height//2,width//2:] = 0
+			self.mask[:,:,height//2+1:,:] = 0
 		else:
-			self.mask[:,:,height//2-1,width//2:] = 0
-			self.mask[:,:,height//2:,:] = 0
+			self.mask[:,:,height//2,width//2+1:] = 0
+			self.mask[:,:,height//2+1:,:] = 0
 
 
 	def forward(self, x):
