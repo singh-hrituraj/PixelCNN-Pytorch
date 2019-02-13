@@ -62,10 +62,9 @@ Below is the output of `generate.py` after training the model for 25 epochs and 
 The work is based on [A Oord et. al.](https://arxiv.org/abs/1601.06759). The model is currently restricted to MNIST dataset only.
 
 ## References
-```
+
 1. Aaron van den Oord, Nal Kalchbrenner, and Koray Kavukcuoglu. Pixel recurrent neural networks. arXiv preprint arXiv:1601.06759, 2016.
 2. [Tutorial](http://faculty.iitmandi.ac.in/~aditya/cs671/data/Lect22.pdf) on Pixel RNN 
-```
 
 
 
