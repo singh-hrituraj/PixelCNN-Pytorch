@@ -16,6 +16,7 @@ Clearly, pixel `a` should therefore not take into account the `b, f and g` since
 ![Representation of Convolution on the input without masking](images/Masked_Conv.png)
 
 Thus sequence by sequence we keep on generating the pixels one by one until the entire image is generated. This can be visualised very neatly with the help of the graphic image below:
+
 ![Visualisation](images/Visualisation.gif)
 
 ### Masking
@@ -45,6 +46,7 @@ python3 generate.py config/config_generate.txt
 ```
 
 Below is the output of `generate.py` after training the model for 25 epochs and using its checkpoint.
+
 ![Sample](images/sample.png)  
 
 
