@@ -5,17 +5,24 @@ Indian Institute of Technology Roorkee
 
 from torchvision import datasets, transforms
 import configparser
+import os
 
 def get_MNIST(path):
-	"""
-	Loads the train and test MNIST data and returns both after 
-	trainsforming the images to tensors. Downloads the data if 
-	not on local path
-	"""
-    assert(os.path.exists(path), 'The dataloading path does not exist!')
-	train_data = datasets.MNIST(root=path, train=True, download=True, transform = transforms.ToTensor())
-	test_data = datasets.MNIST(root=path, train=False, download=True, transform = transforms.ToTensor())
-	return train_data, test_data
+    """
+    Loads the train and test MNIST data and returns both after 
+    trainsforming the images to tensors. Downloads the data if 
+    not on local path
+    """
+    assert os.path.exists(path), 'The dataloading path does not exist!'
+    train_data = datasets.MNIST(root=path,
+                                train=True,
+                                download=True,
+                                transform=transforms.ToTensor())
+    test_data = datasets.MNIST(root=path,
+                               train=False,
+                               download=True,
+                               transform=transforms.ToTensor())
+    return train_data, test_data
 
 
 def parse_config(filename):

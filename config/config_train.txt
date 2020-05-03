@@ -1,6 +1,5 @@
 [data]
-path = /home/gnpillai/Hrituraj/Pixel-CNN/Data
-
+path = Data
 
 [network]
 no_layers = 8
